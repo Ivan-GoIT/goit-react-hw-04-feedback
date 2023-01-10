@@ -1,6 +1,6 @@
 import { FeedbackWidget } from '../FeedbackWidget/FeedbackWidget';
 import { useState } from 'react';
-import { useEffect } from 'react';
+//import { useEffect } from 'react';
 
 export const App = () => {
   const [good, setGood] = useState({ name: 'Good', value: 0 });
@@ -12,7 +12,7 @@ export const App = () => {
     value: '0%',
   });
 
-  useEffect(()=>{countTotalFeedback()},[good])
+  //useEffect(()=>{countTotalFeedback()},[good])
 
   const countPositiveFeedbackPercentage = () => {
     setPositivePercentage({
@@ -22,23 +22,24 @@ export const App = () => {
   };
 
   const countTotalFeedback = () => {
-    console.log('countTotalFeedback', total);
-    console.log('good.value', good.value);
     setTotal({
       ...total,
       value: good.value + neutral.value + bad.value,
     });
 
     countPositiveFeedbackPercentage();
+    // console.log('countTotalFeedback', total);
+    // console.log('good.value', good.value);
+
   };
 
   const handleStatisticChange = evt => {
-    const key = evt.target.name;
-    console.log('handleStatisticChange');
-    switch (key) {
+    const {name} = evt.target;
+    //console.log('handleStatisticChange');
+    switch (name) {
       case 'good':
         setGood({ ...good, value: good.value + 1 });
-        console.log('good', good);
+        //console.log('good', good);
         break;
       case 'neutral':
         setNeutral({ ...neutral, value: neutral.value + 1 });
@@ -49,6 +50,7 @@ export const App = () => {
       default:
         return;
     }
+    countTotalFeedback()
   };
 
   return (
