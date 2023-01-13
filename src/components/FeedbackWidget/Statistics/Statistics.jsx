@@ -5,6 +5,8 @@ export const Statistics = ({ statistics }) => {
     const items = Object.values(statistics);
   return (
     <>
+        {console.log("Statistics.render")}
+
       <ul className={css['list-zeroing']}>
         {items.map(({ name, value }) => (
           <li key={name}>

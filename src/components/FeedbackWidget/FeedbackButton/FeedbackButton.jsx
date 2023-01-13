@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 export const FeedbackButton = props => {
   const { buttonName, buttonTitle, onClick } = props;
   return (
+    
     <button
+    
       type="button"
       name={buttonName}
       className={css.button}
       onClick={onClick}
     >
+      {console.log("FeedbackButton.render:",buttonTitle)}
       {buttonTitle}
     </button>
   );
