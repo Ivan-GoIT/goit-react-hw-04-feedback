@@ -11,7 +11,6 @@ export const FeedbackButton = memo(
         className={css.button}
         onClick={onClick}
       >
-        {console.log('FeedbackButton.render:', buttonTitle)}   
         {buttonTitle}
       </button>
     );

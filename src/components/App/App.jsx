@@ -1,5 +1,5 @@
 import { FeedbackWidget } from '../FeedbackWidget/FeedbackWidget';
-import { useState, useCallback } from 'react';
+import { useState,  } from 'react';
 // import { useEffect } from 'react';
 
 const useAppState = (key, value) => {
@@ -45,7 +45,6 @@ export const App = () => {
 
   return (
     <>
-      {console.log('App.render')}
       <FeedbackWidget
         stateData={{ good, bad, neutral, total, positivePercentage }}
         onChangeStatistic={handleStatisticChange}
